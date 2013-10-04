@@ -45,7 +45,7 @@ def main():
 
     print '[prism] Starting new phasing run.'
     positions = Positions(args.positions, args.start, args.end)
-    print '[prism] Loaded set of positions'
+    print '[prism] Loaded set of positions.'
 
     haplotypes, genetic_map = loader.load_haplotypes_and_genetic_map_from_panel_gz(args.positions, positions)
     print '[prism] Loaded locally-phased haplotypes.'
