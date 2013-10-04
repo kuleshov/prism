@@ -18,6 +18,16 @@ setup(name = "prism",
         'scipy>=0.8.0',
       ],
 
+      data_files=[('', [
+        'loops'
+      ])],
+
+      # data_files=[('', [
+      #   'loops/viterbi_factorial.c',
+      #   'loops/forwards_factorial.c',
+      #   'loops/backwards_factorial.c',
+      # ])],
+
       author='Volodymyr Kuleshov',
       description='Prism statistical phaser.'
     )
