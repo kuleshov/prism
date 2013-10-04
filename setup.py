@@ -22,13 +22,13 @@ setup(name = "prism",
       #   'loops'
       # ])],
 
-      data_files=[('loops', [
-        'loops/viterbi_factorial.c',
-        'loops/forwards_factorial.c',
-        'loops/backwards_factorial.c',
-        'loops/joint_probability.c',
-        'loops/indices.h',
-        'loops/logaddexp.h',
+      data_files=[('libprism/loops', [
+        'libprism/loops/viterbi_factorial.c',
+        'libprism/loops/forwards_factorial.c',
+        'libprism/loops/backwards_factorial.c',
+        'libprism/loops/joint_probability.c',
+        'libprism/loops/indices.h',
+        'libprism/loops/logaddexp.h',
       ])],
 
       author='Volodymyr Kuleshov',
