@@ -27,7 +27,7 @@ A package containing Prism is available at http://www.stanford.edu/~kuleshov/pri
 	cd prism
 	python setup.py install
 
-Prism is written in Python and C, and requires numpy (>=1.5.1) and scipy (>=0.8.0) as well as a relatively recent version of gcc. It makes use of the SciPy Weave package (http://docs.scipy.org/doc/scipy/reference/tutorial/weave.html) to compile inline C code into Python. It has been tested on a stock Ubuntu 12.04 Linux machine.
+Prism is written in Python and C, and requires numpy (>=1.5.1) and scipy (>=0.8.0) as well as a relatively recent version of gcc. It makes use of the SciPy Weave package to compile inline C code into Python. It has been tested on a stock Ubuntu 12.04 Linux machine.
 
 Instructions
 ------------
@@ -54,11 +54,11 @@ Each input block must be tagged with an ID. The phase output file has the follow
 
 	ID PHASE SCORE 
 
-where PHASE equals 0 or 1. If it equals 1, the block identified with ID should be flipped. The path output file uses the format
+where `PHASE` equals 0 or 1. If it equals 1, the block identified with ID should be flipped. The path output file uses the format
 
 	POS R1 R1 A1 A2
 
-where POS is a genomic position from the positions file, R1 and R2 are the indices of the reference panel that best describe the sample at that position, and A1, A2 are the allele of the reference panel haplotypes at that position.
+where `POS` is a genomic position from the positions file, `R1` and `R2` are the indices of the reference panel that best describe the sample at that position, and `A1`, `A2` are the allele of the reference panel haplotypes at that position.
 
 The `prism-interleaving` command requires the following input
 
@@ -79,7 +79,7 @@ A set of locally-phased blocks is transformed into global blocks in two stages. 
 Demonstration
 -------------
 
-The following is a step-by-step tutorial on how to use Prism over a small ~1Mbp region of chromosome 22 of HapMap sample NA12878. We ask the reader to run these steps on a stock Ubuntu 12.04 Linux machine, and recommend using an m1.large Amazon EC2 instance. Depending on the chosen parameter settings, Prism can use several gigabytes of RAM over the course of its execution.
+The following is a step-by-step tutorial on how to use Prism over a small ~1Mbp region of chromosome 22 of HapMap sample NA12878. We suggest that the reader run these steps on a stock Ubuntu 12.04 Linux machine, for example on an new m1.large Amazon EC2 instance. Depending on the chosen parameter settings, Prism can use several gigabytes of RAM over the course of its execution.
 
 ### Setting up
 
@@ -97,7 +97,7 @@ On a stock Ubuntu 12.04 machine, extract the contents of the prism.tar.gz packag
 	cd prism
 	sudo python setup.py install
 
-This will install two commands: `prism` and `prism-interleaving`.
+This will make availble two new commands: `prism` and `prism-interleaving`.
 
 Next, download the data package with various input files for NA12878 chromosome 22 (for simplicity, we recommend downloading directly to the prism folder):
 
@@ -131,9 +131,9 @@ The long switch accuracy for these blocks should be 99.95%. Unfortunately, these
 		--path region.path 
 		--phase region.phase
 
-We manually specified a `--K` value of 75, indicating that `prism` should perform inference with the 75 haplotypes that are the closest to the subject within that particular region. Although larger values of `K` may yield better performance, the running time and memory usage of the algorithm increases superlinearly with `K`. A value of 75 should be suitable for a demonstration, but you find that the phaser takes too much time, we suggest moving to a value of 50 or 40.
+We manually specified a `--K` value of 75, indicating that `prism` should perform inference with the 75 haplotypes that are the closest to the subject within that particular region. Although larger values of `K` may yield better performance, the running time and memory usage of the algorithm increases superlinearly with `K`. A value of 75 should be suitable for a demonstration, but if the phaser takes too much time, we suggest moving to a value of 50 or 40.
 
-Over the course of the execution, `prism` will automatically compile the C code it needs to run using SciPy Weave.
+Over the course of the execution, `prism` will automatically compile its C functions using SciPy Weave.
 
 On a m1.large Amazon EC2 instance, the above command takes about 5 minutes to finish with `--K 75`.
 
