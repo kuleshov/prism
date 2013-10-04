@@ -1,3 +1,5 @@
+*.sublime-*
+
 *.py[cod]
 
 # C extensions
