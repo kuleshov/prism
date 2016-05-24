@@ -5,7 +5,7 @@ Prism is an implementation of the statistical phasing algorithm used in
 
 > Kuleshov, Xie, Chen, Pushkarev et al., Whole-genome haplotyping using long reads and statistical methods. Nature Biotechnology, February 2014.
 
-Prism uses a new phasing algorithm that augments traditional molecular haplotyping approaches with statistical methods. By using Prism, one can substantially improve phasing performance and reduce sequencing costs. Prism was used to enable the first commercially available phasing product offered by Moleculo Inc. (now part of Illumina Inc).
+Prism augments traditional molecular haplotyping approaches with statistical methods, which substantially improves phasing performance and reduces sequencing cost. It was used in the first commercially available phasing product offered by Moleculo Inc. (now part of Illumina Inc).
 
 Copyright
 ---------
